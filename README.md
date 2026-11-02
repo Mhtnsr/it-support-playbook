@@ -1,50 +1,50 @@
-# IT Support Toolkit & Troubleshooting Playbook
+# It Support Playbook
 
-**Collect evidence. Diagnose the issue. Verify the recovery.**
+IT support runbooks, PowerShell endpoint triage, incident templates, and escalation practice.
 
-A practical support portfolio by [Mhtnsr](https://github.com/Mhtnsr), combining PowerShell automation with structured service desk documentation.
+**Owner:** [Mahamat Nassour Ahmat](https://github.com/Mhtnsr) · IT Support Specialist → Systems Administrator
 
-## Featured: Windows Support Snapshot
+## Problem
 
-A read-only PowerShell utility that collects a small JSON report for endpoint triage: OS version, memory capacity, disk free space, and spooler state.
+Support knowledge is easily lost between tickets and technicians.
 
-**17 automated assertions passed** using synthetic fixtures and mocked collectors. A direct smoke run produced valid JSON with unavailable collector statuses; live endpoint collection still needs lab validation.
+## Solution
 
-[Get started](toolkit/README.md) · [Source code](toolkit/Get-SupportSnapshot.ps1) · [Tests](toolkit/Test-SupportSnapshot.ps1) · [Synthetic example](toolkit/sample-output.json)
+Five focused runbooks, a read-only Windows snapshot utility, reusable user responses, and clear escalation and incident templates.
 
-## Troubleshooting library
+## Usage
 
-| User reports | Guide | Main investigation |
-| --- | --- | --- |
-| “I can't get online.” | [Connectivity](runbooks/01-network-connectivity.md) | Link, addressing, gateway, service path |
-| “Websites won't open.” | [DNS](runbooks/02-dns-resolution.md) | Resolver configuration, query results, expected record |
-| “My account keeps locking.” | [Account lockout](runbooks/03-account-lockout.md) | Account state, failed sign-ins, stale credentials |
-| “My print job never arrives.” | [Printers](runbooks/04-printer-troubleshooting.md) | Device, queue, job, spooler, application |
-| “My computer is slow.” | [Windows performance](runbooks/05-slow-windows-device.md) | CPU, memory, storage, startup, remote resources |
+Run from the repository root. Use an isolated, authorized environment and inspect source before execution.
 
-## A useful handoff
+```powershell
+./toolkit/Get-SupportSnapshot.ps1
+./toolkit/Test-SupportSnapshot.ps1
+```
 
-Use the [incident template](templates/incident-template.md) to record impact, actual observations, hypotheses, changes, verification, and the next action. Good notes explain why a check mattered and what its result established.
+## Validation and limits
 
-## Evidence and status
+Snapshot: 17 synthetic assertions passed in the earlier validation. Live collectors were unavailable in the authoring environment. Runbooks are reference material; no workplace incidents or achieved SLA metrics are claimed.
 
-| Material | Current status |
-| --- | --- |
-| PowerShell toolkit | Implemented; 17 fixture-based assertions passed |
-| Live endpoint collection | Requires dedicated lab validation |
-| Runbooks | Reference documentation; not completed workplace incidents |
-| Sample JSON | Synthetic illustration |
-| Windows & Active Directory labs | [Planned](labs/ROADMAP.md) |
+## Screenshots and evidence
 
-Commands are examples for authorized environments. Replace placeholders and follow local change and access procedures. Public evidence should use lab data and exclude credentials, employer records, and identifiable user information.
+[Evidence checklist](evidence/README.md). Placeholder: add a sanitized capture of the actual execution or lab result here after validation. No screenshots or outcomes are fabricated.
+
+<!-- Example after creating the file: ![Sanitized lab result](evidence/lab-result.png) -->
 
 ## Repository map
 
-```text
-toolkit/       PowerShell source, tests, usage, and sample JSON
-runbooks/      Five focused troubleshooting guides
-templates/     Incident documentation template
-labs/          Planned hands-on exercises and evidence standards
-```
+Source belongs in `scripts/`, reproducible checks in `tests/`, synthetic inputs in `examples/`, design notes in `docs/`, reusable records in `templates/`, and sanitized proof in `evidence/`. Only directories relevant to this project are created.
 
-[Back to my profile](https://github.com/Mhtnsr)
+## Next steps
+
+- Capture a reproducible lab run with expected versus observed behavior.
+- Document failure cases and recovery or escalation.
+- Update validation status only after recording actual results.
+
+## Security
+
+See [SECURITY.md](SECURITY.md). No company data, credentials, internal topology, or live ticket details belong here.
+
+## License
+
+[MIT](LICENSE). A personal learning project; not affiliated with or endorsed by USEReady, Microsoft, CompTIA, or other vendors.

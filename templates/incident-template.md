@@ -46,3 +46,4 @@ Link sanitized screenshots or output captured in the lab. Omit passwords, tokens
 ## Lessons learned
 
 What would make diagnosis, prevention, or documentation better next time?
+

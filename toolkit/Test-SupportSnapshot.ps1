@@ -48,3 +48,4 @@ Assert-Equal $unavailable.FixedDisks.Status 'Unavailable' 'disk failure recorded
 Assert-Equal $unavailable.PrintSpooler.Status 'Unavailable' 'service failure recorded'
 Assert-Equal (($unavailable | ConvertTo-Json -Depth 6) -match 'PRIVATE') $false 'raw errors omitted'
 Write-Output "$script:passed assertions passed. Fixtures are synthetic."
+
