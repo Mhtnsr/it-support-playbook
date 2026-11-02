@@ -1,50 +1,39 @@
-# It Support Playbook
+# IT support playbook
 
-IT support runbooks, PowerShell endpoint triage, incident templates, and escalation practice.
+Personal troubleshooting notes and small support tools. The goal is to connect a user's symptom to a useful check, a focused change, and verification of the original task.
 
-**Owner:** [Mahamat Nassour Ahmat](https://github.com/Mhtnsr) · IT Support Specialist → Systems Administrator
+## Find a runbook
 
-## Problem
+| Symptom | Guide |
+| --- | --- |
+| No network connection | [Connectivity](runbooks/01-network-connectivity.md) |
+| Names do not resolve | [DNS](runbooks/02-dns-resolution.md) |
+| Account keeps locking | [Account lockout](runbooks/03-account-lockout.md) |
+| Print jobs do not arrive | [Printers](runbooks/04-printer-troubleshooting.md) |
+| Windows device feels slow | [Performance](runbooks/05-slow-windows-device.md) |
 
-Support knowledge is easily lost between tickets and technicians.
+These are reference guides, not records of resolved workplace incidents. Actual incident reports will need their own symptoms, observations, changes, and results.
 
-## Solution
+## Endpoint snapshot
 
-Five focused runbooks, a read-only Windows snapshot utility, reusable user responses, and clear escalation and incident templates.
-
-## Usage
-
-Run from the repository root. Use an isolated, authorized environment and inspect source before execution.
+[Get-SupportSnapshot.ps1](toolkit/Get-SupportSnapshot.ps1) collects a small read-only JSON report: OS version, memory capacity, fixed-disk free space, and print spooler state. It excludes hostnames, usernames, network addresses, and disk labels.
 
 ```powershell
 ./toolkit/Get-SupportSnapshot.ps1
 ./toolkit/Test-SupportSnapshot.ps1
 ```
 
-## Validation and limits
+The fixture-based suite covers calculation, serialization, missing data, and collector failures. The live collectors were unavailable in the authoring environment, so real Windows endpoint collection remains to be tested. [Usage and limitations](toolkit/README.md) · [Validation record](docs/validation.md).
 
-Snapshot: 17 synthetic assertions passed in the earlier validation. Live collectors were unavailable in the authoring environment. Runbooks are reference material; no workplace incidents or achieved SLA metrics are claimed.
+## Ticket documentation
 
-## Screenshots and evidence
+- [Incident record](templates/incident-template.md): impact, evidence, hypotheses, change, verification, and handoff.
+- [User responses](templates/user-responses.md): acknowledgment, progress, resolution, and escalation wording.
 
-[Evidence checklist](evidence/README.md). Placeholder: add a sanitized capture of the actual execution or lab result here after validation. No screenshots or outcomes are fabricated.
+Use synthetic examples in public write-ups. Real ticket details, account identifiers, and employer records stay outside this repository.
 
-<!-- Example after creating the file: ![Sanitized lab result](evidence/lab-result.png) -->
+## Next exercise
 
-## Repository map
+Run one guide in an isolated test environment and write up expected versus observed behavior. The [lab roadmap](labs/ROADMAP.md) lists possible exercises; it is not a completion record. [Evidence index](evidence/README.md).
 
-Source belongs in `scripts/`, reproducible checks in `tests/`, synthetic inputs in `examples/`, design notes in `docs/`, reusable records in `templates/`, and sanitized proof in `evidence/`. Only directories relevant to this project are created.
-
-## Next steps
-
-- Capture a reproducible lab run with expected versus observed behavior.
-- Document failure cases and recovery or escalation.
-- Update validation status only after recording actual results.
-
-## Security
-
-See [SECURITY.md](SECURITY.md). No company data, credentials, internal topology, or live ticket details belong here.
-
-## License
-
-[MIT](LICENSE). A personal learning project; not affiliated with or endorsed by USEReady, Microsoft, CompTIA, or other vendors.
+[MIT license](LICENSE) · [Security](SECURITY.md)
