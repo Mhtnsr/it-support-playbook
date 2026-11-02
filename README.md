@@ -1,47 +1,50 @@
-# IT Support Troubleshooting Playbook
+# IT Support Toolkit & Troubleshooting Playbook
 
-**Practical troubleshooting. Clear handoffs. Reliable user support.**
+**Collect evidence. Diagnose the issue. Verify the recovery.**
 
-A portfolio knowledge base by [Mhtnsr](https://github.com/Mhtnsr), organized around common service desk problems and a repeatable support process.
+A practical support portfolio by [Mhtnsr](https://github.com/Mhtnsr), combining PowerShell automation with structured service desk documentation.
 
-## Start here
+## Featured: Windows Support Snapshot
 
-| User reports | Guide |
+A read-only PowerShell utility that collects a small JSON report for endpoint triage: OS version, memory capacity, disk free space, and spooler state.
+
+**17 automated assertions passed** using synthetic fixtures and mocked collectors. A direct smoke run produced valid JSON with unavailable collector statuses; live endpoint collection still needs lab validation.
+
+[Get started](toolkit/README.md) · [Source code](toolkit/Get-SupportSnapshot.ps1) · [Tests](toolkit/Test-SupportSnapshot.ps1) · [Synthetic example](toolkit/sample-output.json)
+
+## Troubleshooting library
+
+| User reports | Guide | Main investigation |
+| --- | --- | --- |
+| “I can't get online.” | [Connectivity](runbooks/01-network-connectivity.md) | Link, addressing, gateway, service path |
+| “Websites won't open.” | [DNS](runbooks/02-dns-resolution.md) | Resolver configuration, query results, expected record |
+| “My account keeps locking.” | [Account lockout](runbooks/03-account-lockout.md) | Account state, failed sign-ins, stale credentials |
+| “My print job never arrives.” | [Printers](runbooks/04-printer-troubleshooting.md) | Device, queue, job, spooler, application |
+| “My computer is slow.” | [Windows performance](runbooks/05-slow-windows-device.md) | CPU, memory, storage, startup, remote resources |
+
+## A useful handoff
+
+Use the [incident template](templates/incident-template.md) to record impact, actual observations, hypotheses, changes, verification, and the next action. Good notes explain why a check mattered and what its result established.
+
+## Evidence and status
+
+| Material | Current status |
 | --- | --- |
-| “I can't get online.” | [Network connectivity](runbooks/01-network-connectivity.md) |
-| “The network works, but websites won't open.” | [DNS resolution](runbooks/02-dns-resolution.md) |
-| “My account keeps locking.” | [Account lockout](runbooks/03-account-lockout.md) |
-| “My print job never arrives.” | [Printer troubleshooting](runbooks/04-printer-troubleshooting.md) |
-| “My computer is slow.” | [Slow Windows device](runbooks/05-slow-windows-device.md) |
+| PowerShell toolkit | Implemented; 17 fixture-based assertions passed |
+| Live endpoint collection | Requires dedicated lab validation |
+| Runbooks | Reference documentation; not completed workplace incidents |
+| Sample JSON | Synthetic illustration |
+| Windows & Active Directory labs | [Planned](labs/ROADMAP.md) |
 
-Use the [incident template](templates/incident-template.md) to document an investigation. See the [lab roadmap](labs/ROADMAP.md) for planned hands-on evidence.
+Commands are examples for authorized environments. Replace placeholders and follow local change and access procedures. Public evidence should use lab data and exclude credentials, employer records, and identifiable user information.
 
-## Status and scope
+## Repository map
 
-These are reference runbooks and learning materials, not claims of completed incidents or verified lab results. Commands are examples for an authorized Windows test environment. Adapt steps to the operating system, privileges, and organization policy.
-
-Completed lab reports will be added separately with environment details, actual observations, and verification evidence.
-
-## Support workflow
-
-1. Establish the symptom, business impact, scope, and start time.
-2. Gather relevant evidence before changing the system.
-3. Compare working and affected components to narrow the cause.
-4. Apply one focused, authorized change at a time.
-5. Repeat the user's original task to verify recovery.
-6. Record the cause, resolution, verification, and escalation notes.
-
-## Documentation principles
-
-- Separate observations from hypotheses.
-- Capture errors accurately and record the time.
-- Explain why each check matters.
-- Use synthetic examples and sanitized screenshots in public reports.
-- Keep passwords, tokens, employer records, and identifiable user data out of this repository.
-- Record unsuccessful checks when they help the next technician avoid repeating work.
-
-## Suggested reading order
-
-Start with network connectivity, then DNS. Continue with accounts, printers, and performance. Complete one lab scenario with evidence before marking it as completed.
+```text
+toolkit/       PowerShell source, tests, usage, and sample JSON
+runbooks/      Five focused troubleshooting guides
+templates/     Incident documentation template
+labs/          Planned hands-on exercises and evidence standards
+```
 
 [Back to my profile](https://github.com/Mhtnsr)
