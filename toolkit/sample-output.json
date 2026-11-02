@@ -1,0 +1,10 @@
+{
+  "SchemaVersion": "1.0",
+  "CollectedAtUtc": "2026-11-01T00:00:00.0000000Z",
+  "OperatingSystem": { "Status": "Collected", "Version": "EXAMPLE", "Build": "EXAMPLE", "MemoryGiB": 16 },
+  "FixedDisks": {
+    "Status": "Collected",
+    "Items": [ { "Disk": 1, "CapacityGiB": 100, "FreeGiB": 10, "FreePercent": 10, "Status": "Review" } ]
+  },
+  "PrintSpooler": { "Status": "Collected", "State": "Running" }
+}
