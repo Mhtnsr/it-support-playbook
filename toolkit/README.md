@@ -80,3 +80,4 @@ A direct smoke run also emitted parseable JSON in the authoring environment. All
 - Validate collection on a dedicated Windows lab VM.
 - Add an opt-in, locally reviewed network diagnostic section.
 - Add a human-readable report formatter without changing the JSON schema.
+

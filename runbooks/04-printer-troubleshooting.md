@@ -40,3 +40,4 @@ Include the queue and device model, error text, scope, timestamps, driver detail
 ## Suggested lab
 
 Use a local test queue or virtual printer to compare normal printing with a paused queue. Restore the initial state and capture the observed behavior.
+

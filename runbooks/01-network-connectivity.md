@@ -47,3 +47,4 @@ Repeat the user's original task and record the result. Escalate multiple-device 
 ## Suggested lab
 
 Compare a working connection with a deliberately disconnected adapter in a disposable lab. Record actual differences and restore the original configuration. Do not perform outage simulations on a production device.
+

@@ -46,3 +46,4 @@ Confirm normal sign-in and access to the original service. Monitor for recurrenc
 ## Suggested lab
 
 Use a disposable test account in an isolated domain with a documented lockout policy. Generate a controlled lockout, inspect status, unlock it, and verify sign-in. Do not test with a production or privileged account.
+

@@ -39,3 +39,4 @@ Repeat the original slow task under comparable conditions. Record elapsed times 
 ## Suggested lab
 
 Measure a harmless local task before and after an approved startup configuration change on a disposable VM. Record repeat measurements and avoid generating uncontrolled resource exhaustion.
+

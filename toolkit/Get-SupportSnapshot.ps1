@@ -68,3 +68,4 @@ function Get-SupportSnapshot {
 if ($MyInvocation.InvocationName -ne '.') {
     Get-SupportSnapshot | ConvertTo-Json -Depth 6
 }
+

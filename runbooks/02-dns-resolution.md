@@ -43,3 +43,4 @@ Repeat the lookup, compare the answer with the expected record, and test the app
 ## Suggested lab
 
 In an isolated DNS lab, compare an existing test record with a deliberately nonexistent name. Save real output and explain the difference between lookup failure and a service connection failure.
+
