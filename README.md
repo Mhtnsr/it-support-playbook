@@ -23,7 +23,7 @@ These are reference guides, not records of resolved workplace incidents. Actual 
 ./toolkit/Test-SupportSnapshot.ps1
 ```
 
-The fixture-based suite covers calculation, serialization, missing data, and collector failures. The live collectors were unavailable in the authoring environment, so real Windows endpoint collection remains to be tested. [Usage and limitations](toolkit/README.md) · [Validation record](docs/validation.md).
+The fixture-based suite covers calculation, serialization, missing data, and collector failures. Live OS and disk collection now pass on GitHub-hosted Windows under Windows PowerShell and PowerShell 7; validation on a personal Windows 11 lab device is still pending. [Usage and limitations](toolkit/README.md) · [Validation record](docs/validation.md).
 
 ## Ticket documentation
 
@@ -41,3 +41,7 @@ Run one guide in an isolated test environment and write up expected versus obser
 ## Automated checks
 
 [CI configuration and limits](docs/ci.md) · [Latest workflow runs](https://github.com/Mhtnsr/it-support-playbook/actions/workflows/checks.yml)
+
+[Recorded passing run — November 7, 2026](docs/ci-results-2026-11-07.md).
+
+[Windows snapshot validation write-up](evidence/windows-runner-validation.md).

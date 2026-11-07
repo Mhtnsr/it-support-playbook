@@ -1,5 +1,7 @@
 # Evidence index
 
-Local automated checks are recorded in [docs/validation.md](../docs/validation.md).
+- [Hosted Windows snapshot validation](windows-runner-validation.md) — executed November 7, 2026, with CI/job links and an actual allowlisted report.
+- [Snapshot JSON from that run](windows-runner-snapshot.json).
+- [Earlier local fixture checks](../docs/validation.md).
 
-No hands-on lab screenshots have been recorded here yet. After an exercise, add a sanitized capture with the environment, exact step, observed result, interpretation, and recovery outcome. Keep raw/private output outside the repository.
+Personal home-lab screenshots are still pending. Hosted-runner evidence is labeled separately from personal lab or workplace experience.
