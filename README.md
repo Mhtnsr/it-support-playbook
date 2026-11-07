@@ -37,3 +37,7 @@ Use synthetic examples in public write-ups. Real ticket details, account identif
 Run one guide in an isolated test environment and write up expected versus observed behavior. The [lab roadmap](labs/ROADMAP.md) lists possible exercises; it is not a completion record. [Evidence index](evidence/README.md).
 
 [MIT license](LICENSE) · [Security](SECURITY.md)
+
+## Automated checks
+
+[CI configuration and limits](docs/ci.md) · [Latest workflow runs](https://github.com/Mhtnsr/it-support-playbook/actions/workflows/checks.yml)
