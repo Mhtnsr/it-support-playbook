@@ -1,0 +1,33 @@
+{
+  "SchemaVersion": "1.0",
+  "CollectedAtUtc": "2026-11-07T13:37:40.6046483Z",
+  "OperatingSystem": {
+    "Status": "Collected",
+    "Version": "10.0.26100",
+    "Build": "26100",
+    "MemoryGiB": 15.99
+  },
+  "FixedDisks": {
+    "Status": "Collected",
+    "Items": [
+      {
+        "Disk": 1,
+        "CapacityGiB": 149.89,
+        "FreeGiB": 31.17,
+        "FreePercent": 20.8,
+        "Status": "OK"
+      },
+      {
+        "Disk": 2,
+        "CapacityGiB": 150,
+        "FreeGiB": 147.02,
+        "FreePercent": 98,
+        "Status": "OK"
+      }
+    ]
+  },
+  "PrintSpooler": {
+    "Status": "Collected",
+    "State": "Running"
+  }
+}

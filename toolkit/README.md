@@ -22,7 +22,7 @@ To save a local report:
 .\Get-SupportSnapshot.ps1 | Set-Content -LiteralPath .\snapshot.json -Encoding utf8
 ```
 
-The script does not bypass execution policy. Follow your environment's approved script execution process. CIM and service access depend on permissions and available Windows components. PowerShell 5.1+ syntax is used; validation so far was performed with PowerShell 7, not a full OS/version matrix.
+The script does not bypass execution policy. Follow your environment's approved script execution process. CIM and service access depend on permissions and available Windows components. PowerShell 5.1+ syntax is used. CI now runs Windows PowerShell and PowerShell 7 on a GitHub-hosted Windows runner; this is not a full Windows-client compatibility matrix.
 
 ## What the report means
 
@@ -65,7 +65,7 @@ Run the dependency-free checks:
 - Exclusion of fixture disk identifiers and raw errors
 - Explicit unavailable results when collection fails
 
-A direct smoke run also emitted parseable JSON in the authoring environment. All three live collectors were unavailable there, so live endpoint collection remains unvalidated. These checks establish calculation, serialization, and fallback behavior; they do not establish compatibility with every Windows configuration.
+The original restricted-workspace smoke run had unavailable collectors. On November 7, 2026, CI successfully collected live OS and disk data on a disposable Windows Server 2025 runner under both PowerShell runtimes. See the [hosted validation write-up](../evidence/windows-runner-validation.md) and [actual report](../evidence/windows-runner-snapshot.json). Personal Windows 11 lab validation is still pending.
 
 ## Use in a support ticket
 
